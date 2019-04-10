@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 import os
-os.system('clear')
-print("Installing dependencies..........")
-os.system('sudo apt-get install wget -y')
+
 os.system('clear')
 try:
     os.system("echo '\e[92m'")
@@ -63,6 +61,7 @@ try:
         ch=int(input("# Enter your choice >> "))
         if ch==1:
             try:
+                os.system('sudo apt-get install wget -y')
                 os.system("echo '# \ndeb http://kali.cs.nctu.edu.tw/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list")
                 os.system("wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add")
                 os.system("echo '\e[93m'")
