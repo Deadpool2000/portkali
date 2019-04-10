@@ -13,14 +13,11 @@ try:
 ██║     ╚██████╔╝██║  ██║   ██║   ██║  ██╗██║  ██║███████╗██║
 ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝
 
-                Code By --> Deadpool2000
-
-        Import Kali Linux Repositories in any Debian distro
-
-#########################################################################
-
+                  Code By --> Deadpool2000
+                  
 Note: Please remove all old kali repositories before installation to avoid errors
 
+#########################################################################
 """)
 
     def list1():
