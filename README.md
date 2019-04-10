@@ -15,4 +15,4 @@ An alternative for Katoolin to install kali repositories in any debian distro
 # Contact
 - Email: thetrickboy007@gmail.com
 
-## If you have any issues regarding this,
+## If you have any issues regarding this,ask here - https://github.com/Deadpool2000/portkali/issues
