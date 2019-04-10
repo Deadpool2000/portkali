@@ -18,6 +18,9 @@ try:
         Import Kali Linux Repositories in any Debian distro
 
 #########################################################################
+
+Note: Please remove all old kali repositories before installation to avoid errors
+
 """)
 
     def list1():
