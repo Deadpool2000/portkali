@@ -23,6 +23,8 @@ Note: Please remove all old kali repositories before installation to avoid error
     def list1():
         os.system("echo '\e[96m'")
         print("""
+>>> Main Menu
+
 1) Add Kali Repositories
 2) Update System
 3) Remove all kali repositories
