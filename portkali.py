@@ -13,16 +13,16 @@ try:
 ██║     ╚██████╔╝██║  ██║   ██║   ██║  ██╗██║  ██║███████╗██║
 ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝
 
-                  Code By --> Deadpool2000
+                Code By -> Deadpool2000
                   
 Note: Please remove all old kali repositories before installation to avoid errors
-
-#####################################################################################
 """)
 
     def list1():
         os.system("echo '\e[96m'")
         print("""
+#####################################################################################
+
 >>> Main Menu
 
 1) Add Kali Repositories
@@ -35,6 +35,7 @@ Note: Please remove all old kali repositories before installation to avoid error
     def l2():
         os.system("echo '\e[93m'")
         print("""
+#####################################################################################
 
 >>> Kali Linux Tools
 
@@ -68,7 +69,7 @@ Note: Please remove all old kali repositories before installation to avoid error
                 os.system("echo '# \ndeb http://kali.cs.nctu.edu.tw/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list")
                 os.system("wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add")
                 os.system("echo '\e[93m'")
-                print("Kali Repositories successfully added!\n")
+                print("Kali Repositories added successfully!\n")
             except ConnectionError:
                 print("Error! Please check your internet connection and try again :(")
             list1()
