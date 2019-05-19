@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-
+import getpass
 os.system('clear')
 try:
     os.system("echo '\e[92m'")
@@ -59,7 +59,13 @@ Note: Please remove all old kali repositories before installation to avoid error
 
 99] Back to Main Menu
 """)
-    
+    def check():
+        R='\033[91m'
+        W='\033[97m'
+        r=getpass.getuser()
+        if r!="root":
+            print(R+"You are not root ! First run 'sudo su' and try again this tool !\n\n"+W)
+            exit(0)     
     def sel():
         ch=int(input("# Enter your choice >> "))
         if ch==1:
@@ -197,6 +203,7 @@ Note: Please remove all old kali repositories before installation to avoid error
             os.system("echo '\e[91m'")
             print("Invalid option! Please try again\n")
             sel()
+    check()
     list1()
     sel()
 except KeyboardInterrupt:
