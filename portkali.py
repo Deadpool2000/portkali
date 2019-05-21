@@ -197,7 +197,7 @@ Note: Please remove all old kali repositories before installation to avoid error
                     tool()
             tool()
         elif ch==6:
-            print(Y+"\nExit...........! Have a nice day :)\n")
+            print(Y+"\n\nExit...........! Have a nice day :)\n")
             print(R+"[======================"+Y+"  Code By"+B+" -"+CY+" Deadpool2000 "+R+"==========================]\n"+W)      
         else:
             print(R+"Invalid option! Please try again\n")
@@ -206,6 +206,6 @@ Note: Please remove all old kali repositories before installation to avoid error
     list1()
     sel()
 except KeyboardInterrupt:    
-    print(Y+"\nExit...........! Have a nice day :)\n")
+    print(Y+"\n\nExit...........! Have a nice day :)\n")
     print(R+"[======================"+Y+"  Code By"+B+" -"+CY+" Deadpool2000 "+R+"==========================]\n"+W) 
 
