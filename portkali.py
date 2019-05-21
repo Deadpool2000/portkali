@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 import os
 import getpass
+
 os.system('clear')
 try:
-    os.system("echo '\e[92m'")
-    print("""
+    # Color code
+    R='\033[91m'
+    Y='\033[93m'
+    G='\033[92m'
+    CY='\033[96m'
+    W='\033[97m'
+    B='\033[95m'    
+    print(G+"""
 
 ██████╗  ██████╗ ██████╗ ████████╗██╗  ██╗ █████╗ ██╗     ██╗
 ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██║ ██╔╝██╔══██╗██║     ██║
@@ -13,17 +20,16 @@ try:
 ██║     ╚██████╔╝██║  ██║   ██║   ██║  ██╗██║  ██║███████╗██║
 ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝
 
-                Code By -> Deadpool2000
+                { Code By -> Deadpool2000 }"""+Y+"""
                   
-Note: Please remove all old kali repositories before installation to avoid errors
-""")
+Note: Please remove all old kali repositories before installation to avoid errors"""+W)
 
     def list1():
-        os.system("echo '\e[96m'")
-        print("""
-#####################################################################################
+        
+        print(B+"""
+#################################################################################"""+G+"""
 
->>> Main Menu
+>>> Main Menu"""+CY+"""
 
 1) Add Kali Repositories
 2) Update System
@@ -31,13 +37,12 @@ Note: Please remove all old kali repositories before installation to avoid error
 4) Read sources.list file
 5) Install Kali Tools
 6) Exit
-""")
+"""+W)
     def l2():
-        os.system("echo '\e[93m'")
-        print("""
-#####################################################################################
+        print(B+"""
+#################################################################################"""+G+"""
 
->>> Kali Linux Tools
+>>> Kali Linux Tools"""+Y+"""
 
 1] Aircrack-ng
 2] Armitage
@@ -58,36 +63,37 @@ Note: Please remove all old kali repositories before installation to avoid error
 17] Wireshark
 
 99] Back to Main Menu
-""")
+"""+W)
     def check():
-        R='\033[91m'
-        W='\033[97m'
         r=getpass.getuser()
         if r!="root":
+            print(B+"#################################################################################\n")
             print(R+"You are not root ! First run 'sudo su' and try again this tool !\n\n"+W)
             exit(0)     
     def sel():
-        ch=int(input("# Enter your choice >> "))
+        ch=int(input(R+"#"+Y+" Enter your choice >> "+W))
         if ch==1:
             try:
-                print("\nAdding repositories................\n")
-                os.system('sudo apt-get install wget -y > /dev/null')
+                f=os.path.isfile("/usr/bin/wget")
+                if f==False:
+                    os.system("apt-get install wget -y")
+                print(G+"\nBacking up 'sources.list'.........................\n")
+                os.system("cp /etc/apt/sources.list /etc/apt/sources.list.bak")
+                print(B+"\nBackup saved as 'sources.list.bak' \n")
+                print(G+"\nAdding repositories................\n")               
                 os.system("echo '# \ndeb http://kali.cs.nctu.edu.tw/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list")
-                os.system("wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add")
-                os.system("echo '\e[93m'")
-                print("Kali Repositories added successfully!\n")
+                os.system("wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add")    
+                print(Y+"\nKali Repositories added successfully!\n"+W)
             except ConnectionError:
                 print("Error! Please check your internet connection and try again :(")
             list1()
             sel()
         elif ch==2:
-            os.system("echo '\e[97m'")
-            print("Updating system.................................\n")
+            print(CY+"Updating system.................................\n"+W)
             os.system("apt-get update")
             list1()
             sel()
         elif ch==3:
-            os.system("echo '\e[97m'")
             try:
                 with open("/etc/apt/sources.list","r") as inp:
                     with open("/etc/apt/sources.list.rf","w") as out:
@@ -97,26 +103,22 @@ Note: Please remove all old kali repositories before installation to avoid error
                 out.close()
                 os.remove("/etc/apt/sources.list")
                 os.system("mv /etc/apt/sources.list.rf /etc/apt/sources.list")
-                os.system("echo '\e[91m'")
-                print("All kali linux repositories have been deleted!\n")
-                os.system("echo")
-                os.system("echo '\e[97m'")
-                print("Updating system.................................\n")
+                print(R+"\nAll kali linux repositories have been deleted!\n")    
+                print(CY+"\nUpdating system.................................\n"+W)
                 os.system("sudo apt-get update")
             except FileNotFoundError:
-                os.system("echo '\e[91m'")
-                print("File not found!")
+                print(R+"File not found!"+W)
             list1()
             sel()
         elif ch==4:
-            os.system("echo '\e[97m'")
+            print(Y+"\nsources.list file >>> \n"+W)
             os.system("cat /etc/apt/sources.list")
             list1()
             sel()
         elif ch==5:
             l2()
             def tool():
-                c=int(input("# Enter your choice >> "))
+                c=int(input(R+"#"+Y+" Enter your choice >> "))
                 os.system("echo '\e[97m'")
                 if c==1:
                     os.system("sudo apt-get install aircrack-ng -y")
@@ -195,19 +197,15 @@ Note: Please remove all old kali repositories before installation to avoid error
                     tool()
             tool()
         elif ch==6:
-            os.system("echo '\e[93m'")
-            print("\nExit...........! Have a nice day :)\n")
-            print("[======================  Code By - Deadpool2000 ==========================]")
-            os.system("echo '\e[97m'")            
+            print(Y+"\nExit...........! Have a nice day :)\n")
+            print(R+"[======================"+Y+"  Code By"+B+" -"+CY+" Deadpool2000 "+R+"==========================]\n"+W)      
         else:
-            os.system("echo '\e[91m'")
-            print("Invalid option! Please try again\n")
+            print(R+"Invalid option! Please try again\n")
             sel()
     check()
     list1()
     sel()
-except KeyboardInterrupt:
-    os.system("echo '\e[93m'")
-    print("\nExit...........! Have a nice day :)\n")
-    print("[======================  Code By - Deadpool2000 ==========================]")
-os.system("echo '\e[97m'")
+except KeyboardInterrupt:    
+    print(Y+"\nExit...........! Have a nice day :)\n")
+    print(R+"[======================"+Y+"  Code By"+B+" -"+CY+" Deadpool2000 "+R+"==========================]\n"+W) 
+
