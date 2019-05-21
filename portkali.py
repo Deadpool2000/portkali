@@ -118,7 +118,7 @@ Note: Please remove all old kali repositories before installation to avoid error
         elif ch==5:
             l2()
             def tool():
-                c=int(input(R+"#"+Y+" Enter your choice >> "))
+                c=int(input(R+"#"+Y+" Enter your choice >> "+W))
                 os.system("echo '\e[97m'")
                 if c==1:
                     os.system("sudo apt-get install aircrack-ng -y")
