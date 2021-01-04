@@ -1,3 +1,10 @@
+# portkali
+
+# Author - D3adpool2K
+
+# github - https://github.com/Deadpool2000
+
+
 #!/usr/bin/python3
 import os
 import getpass
