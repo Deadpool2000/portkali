@@ -1,5 +1,5 @@
 # Portkali
-An alternative for Katoolin to install kali repositories in any debian distro
+Install kali repositories in any debian distro
 
 ![po](https://user-images.githubusercontent.com/32305505/58076235-58cc4080-7bc7-11e9-9d89-a56a323c2702.png)
 
