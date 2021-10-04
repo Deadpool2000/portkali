@@ -15,6 +15,10 @@ Install kali repositories in any debian distro
 - Add kali repositories in any Debian distro
 - Best alternative for Katoolin tool
 
+
+## For more information, visit - [How to add kali repositories in any debian distribution](https://mrhacker7.blogspot.com/2021/09/how-to-install-kali-linux-repositories.html)
+
+
 # Contact
 - Email: d2kyt@protonmail.com
 
